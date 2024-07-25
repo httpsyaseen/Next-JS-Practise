@@ -8,8 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#f06521",
-        secondary: "#ff812e	",
+        primary: "#ff812e	",
+        light: "#fee3d2",
+      },
+
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 1s ease-in-out", // Adjust duration and timing as needed
       },
     },
   },

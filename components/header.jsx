@@ -9,8 +9,8 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0">
-      <nav className="bg-secondary shadow-2xl text-md text-[#fee3d2] flex w-100 justify-between font-semibold  items-center px-5 min-h-20 ">
+    <header className="sticky top-0 ">
+      <nav className="bg-primary shadow-2xl text-md text-light flex w-100 justify-between font-semibold  items-center px-5 min-h-20 relative">
         <>
           <div className="flex-shrink-1 items-center py-2">
             <Image
@@ -55,7 +55,7 @@ export default function Header() {
             <div
               className={`absolute min-h-screen w-screen ${
                 isOpen ? "flex" : "hidden "
-              }  flex-col inset-0 bg-secondary justify-center items-center py-3 px-5  space-y-4 text-xl`}
+              }  flex-col inset-0 bg-primary justify-center items-center py-3 px-5  space-y-4 text-xl`}
               id="menu"
             >
               <span
