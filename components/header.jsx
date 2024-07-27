@@ -9,7 +9,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 ">
+    <header className="sticky top-0 z-10 ">
       <nav className="bg-primary shadow-2xl text-md text-light flex w-100 justify-between font-semibold  items-center px-5 min-h-20 relative">
         <>
           <div className="flex-shrink-1 items-center py-2">
