@@ -29,7 +29,7 @@ export default function Header() {
                 return (
                   <Link
                     key={index}
-                    href={"/"}
+                    href={"/products"}
                     className="uppercase p-2 active:text-black "
                   >
                     {item}

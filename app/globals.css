@@ -21,3 +21,11 @@
     text-wrap: balance;
   }
 }
+
+.heading {
+  @apply text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl  xl:text-[3.4rem] 2xl:text-[3.75rem];
+}
+
+.description {
+  @apply max-w-[600px]  md:text-xl/relaxed px-2;
+}
