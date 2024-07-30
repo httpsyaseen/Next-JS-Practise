@@ -1,6 +1,18 @@
-import { createProduct } from "@/lib/actions";
+"use client";
+import axios from "axios";
 
 export default function Product() {
+  async function createProduct(formData) {
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+      data[key] = value;
+    }
+
+    const res = await axios.post("/api", { ...data });
+
+    console.log(res.data);
+  }
+
   return (
     <div className="container mx-auto mt-24">
       <h1 className="heading text-center text-primary">Create Product</h1>
