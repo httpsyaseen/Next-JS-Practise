@@ -69,8 +69,9 @@ export default function Header() {
                   return (
                     <Link
                       key={index}
-                      href={"/"}
+                      href={"/products"}
                       className="hover:border-b-2 hover:border-b-primary"
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       {item}
                     </Link>

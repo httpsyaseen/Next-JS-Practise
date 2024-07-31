@@ -6,7 +6,7 @@ import productImage from "@/public/images/produc.jpg";
 export default function ProductCard({ product }) {
   return (
     <ScrollAnimation animationClass="animate-zoomIn">
-      <div className=" text-center text-primary shadow-xl max-w-[240px] md:rounded-md  ">
+      <div className=" text-center text-primary md:shadow-xl max-w-[240px] md:rounded-md  ">
         <Image
           src={productImage}
           alt="hehe"
@@ -14,7 +14,7 @@ export default function ProductCard({ product }) {
           width="202"
           className="object-cover w-full h-48 md:rounded-t-md"
         />
-        <div className="pb-4 pt-3">
+        <div className="pb-4 pt-3 ">
           <h2 className="text-center text-md md:text-xl font-bold mb-0 md:mb-2 ">
             {product.name}
           </h2>
@@ -37,7 +37,7 @@ export default function ProductCard({ product }) {
           </div>
           <Link
             href={"/"}
-            className="bg-primary text-light flex rounded-md items-center justify-center mx-1 py-[2px] md:hidden"
+            className="bg-primary text-light flex rounded-md items-center justify-center mx-1 py-[2px] md:hidden self-end"
           >
             Add to cart
           </Link>
