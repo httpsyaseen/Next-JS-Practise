@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/header";
+import { Toaster } from "react-hot-toast";
 
 const roboto = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${roboto.className} bg-[#fff2ea]`}>
         <Header />
+        <Toaster position="top-center" reverseOrder={false} />
         {children}
       </body>
     </html>

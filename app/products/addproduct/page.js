@@ -1,22 +1,25 @@
 "use client";
-import axios from "axios";
+
+import { createProduct } from "@/lib/actions";
+import toast from "react-hot-toast";
 
 export default function Product() {
-  async function createProduct(formData) {
+  async function handleSubmit(formData) {
     const data = {};
     for (const [key, value] of formData.entries()) {
       data[key] = value;
     }
 
-    const res = await axios.post("/api", { ...data });
-
-    console.log(res.data);
+    const { status, error = null } = await createProduct(data);
+    status === "success"
+      ? toast.success("Product Created")
+      : toast.error("Error Creating Product");
   }
 
   return (
     <div className="container mx-auto mt-24">
       <h1 className="heading text-center text-primary">Create Product</h1>
-      <form action={createProduct}>
+      <form action={handleSubmit}>
         <div className="  flex flex-col gap-10 mx-auto mt-6">
           <div className=" flex gap-4 items-center justify-center ">
             <label className="text-xl font-semibold" htmlFor="name">

@@ -42,11 +42,11 @@ export default function Header() {
           <div className="hidden  md:flex space-x-5">
             <div className="flex space-x-2">
               <ShoppingBag />
-              <span>Cart</span>
+              <Link href={"/"}>Cart</Link>
             </div>
             <div className="flex space-x-2">
               <UserRound />
-              <span>Login</span>
+              <Link href={"/products/addproduct"}>Login</Link>
             </div>
           </div>
 
