@@ -30,6 +30,10 @@
   @apply max-w-[600px]  md:text-xl/relaxed px-2;
 }
 
+.g-button {
+  @apply inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium  shadow transition-colors hover:bg-primary/90;
+}
+
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #ff812e; /* Blue */
