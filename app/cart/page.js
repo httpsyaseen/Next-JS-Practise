@@ -68,7 +68,10 @@ export default function Component() {
           <h1 className="text-2xl font-bold">Your Cart</h1>
           <div className="grid gap-6">
             {cart.map((item) => (
-              <div key={item.id} className="flex items-center gap-2 md:gap-6">
+              <div
+                key={item.id}
+                className="flex items-center gap-2 md:gap-6 md:justify-center"
+              >
                 <Image
                   src={ProductImage}
                   alt={item.title}

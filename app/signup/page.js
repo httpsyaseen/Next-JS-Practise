@@ -37,7 +37,7 @@ export default function Signup() {
                 type="text"
                 placeholder="John Doe"
                 required
-                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
             <div>
@@ -52,7 +52,7 @@ export default function Signup() {
                 type="email"
                 placeholder="name@example.com"
                 required
-                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
             <div>
@@ -66,7 +66,7 @@ export default function Signup() {
                 id="password"
                 type="password"
                 required
-                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
             <div>
@@ -81,7 +81,7 @@ export default function Signup() {
                 type="tel"
                 placeholder="123-456-7890"
                 required
-                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
             <div>
@@ -96,7 +96,7 @@ export default function Signup() {
                 type="text"
                 placeholder="123 Main St"
                 required
-                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
             <button

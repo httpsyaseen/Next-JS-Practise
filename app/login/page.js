@@ -38,7 +38,7 @@ export default function Login() {
                 type="email"
                 placeholder="name@example.com"
                 required
-                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm focus:outline-primary"
               />
             </div>
             <div>
@@ -61,7 +61,7 @@ export default function Login() {
                 id="password"
                 type="password"
                 required
-                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm focus:outline-primary"
               />
             </div>
             <button
