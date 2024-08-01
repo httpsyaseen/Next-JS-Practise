@@ -1,8 +1,37 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import ProductImage from "@/public/images/produc.jpg";
 import Link from "next/link";
+import { signupUser } from "@/lib/authActions";
+import { notify } from "@/utils/notify";
 
 export default function Signup() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    phoneNumber: "",
+    address: "",
+  });
+
+  function handleChange(event) {
+    const { id, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    console.log(formData);
+    const { status, error = "null" } = await signupUser(formData);
+
+    notify(status, "User Created Successfully", error || "Error Creating User");
+  }
+
   return (
     <div className="flex min-h-[91dvh]">
       <div className="hidden lg:block w-7/12 relative">
@@ -24,7 +53,7 @@ export default function Signup() {
               Fill in the details below to create a new account.
             </p>
           </div>
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="name"
@@ -37,6 +66,8 @@ export default function Signup() {
                 type="text"
                 placeholder="John Doe"
                 required
+                value={formData.name}
+                onChange={handleChange}
                 className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
@@ -52,6 +83,8 @@ export default function Signup() {
                 type="email"
                 placeholder="name@example.com"
                 required
+                value={formData.email}
+                onChange={handleChange}
                 className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
@@ -66,6 +99,8 @@ export default function Signup() {
                 id="password"
                 type="password"
                 required
+                value={formData.password}
+                onChange={handleChange}
                 className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
@@ -77,10 +112,12 @@ export default function Signup() {
                 Phone Number
               </label>
               <input
-                id="phone"
+                id="phoneNumber"
                 type="tel"
                 placeholder="123-456-7890"
                 required
+                value={formData.phone}
+                onChange={handleChange}
                 className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>
@@ -96,6 +133,8 @@ export default function Signup() {
                 type="text"
                 placeholder="123 Main St"
                 required
+                value={formData.address}
+                onChange={handleChange}
                 className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary focus:outline-primary sm:text-sm"
               />
             </div>

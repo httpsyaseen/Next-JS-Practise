@@ -1,13 +1,14 @@
 import db from "@/lib/connection";
 
-export async function dbHandler(fn, data, id) {
+export async function dbHandler(fn, data) {
   try {
     await db();
-    return fn(data, id);
+    // Return the result of fn
+    return await fn(data);
   } catch (error) {
     return {
       status: "error",
-      error: error.message || "Something went Wrong",
+      error: error.message || "Something went wrong",
     };
   }
 }
