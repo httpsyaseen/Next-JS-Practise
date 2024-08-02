@@ -1,8 +1,33 @@
+"use client";
+
 import Image from "next/image";
 import ProductImage from "@/public/images/produc.jpg";
 import Link from "next/link";
+import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { notify } from "@/utils/notify";
 
 export default function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  function handleChange(event) {
+    const { id, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [id]: value }));
+  }
+
+  async function handleLogin(e) {
+    e.preventDefault();
+    const res = await signIn("credentials", { ...formData, redirect: false });
+    setFormData({
+      email: "",
+      password: "",
+    });
+    notify(res.ok && "success", "Logged In Successfully", res.error);
+  }
+
   return (
     <div className="flex min-h-[91dvh]">
       <div className="hidden lg:block w-7/12 relative">
@@ -25,7 +50,7 @@ export default function Login() {
               Enter your email and password below to access your account.
             </p>
           </div>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleLogin}>
             <div>
               <label
                 htmlFor="email"
@@ -36,8 +61,11 @@ export default function Login() {
               <input
                 id="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="name@example.com"
                 required
+                minLength={6}
                 className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm focus:outline-primary"
               />
             </div>
@@ -52,7 +80,6 @@ export default function Login() {
                 <Link
                   href="#"
                   className="text-sm font-medium text-primary hover:underline"
-                  prefetch={false}
                 >
                   Forgot password?
                 </Link>
@@ -61,6 +88,9 @@ export default function Login() {
                 id="password"
                 type="password"
                 required
+                minLength={8}
+                onChange={handleChange}
+                value={formData.password}
                 className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:ring-primary focus:border-primary sm:text-sm focus:outline-primary"
               />
             </div>
@@ -76,7 +106,6 @@ export default function Login() {
             <Link
               href="/signup"
               className="font-medium text-primary hover:underline"
-              prefetch={false}
             >
               Sign up
             </Link>

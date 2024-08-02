@@ -26,7 +26,6 @@ export default function Signup() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
     const { status, error = "null" } = await signupUser(formData);
 
     notify(status, "User Created Successfully", error || "Error Creating User");
