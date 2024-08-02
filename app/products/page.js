@@ -1,5 +1,5 @@
 import ProductCard from "@/components/product-card";
-import { getAllProducts } from "@/lib/actions";
+import { getAllProducts } from "@/actions/productActions";
 
 export const revalidate = 5;
 

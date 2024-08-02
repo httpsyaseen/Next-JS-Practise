@@ -89,7 +89,7 @@ export default function Header() {
                     onClick={() => setIsOpen(!isOpen)}
                   >
                     {item.icon ? (
-                      <div className="flex space-x-2">
+                      <p className="flex space-x-2">
                         <span className="relative">
                           {item.icon}
                           {item.name === "Cart" && (
@@ -99,7 +99,7 @@ export default function Header() {
                           )}
                         </span>
                         <Link href={"/cart"}>{item.name}</Link>
-                      </div>
+                      </p>
                     ) : (
                       item.name
                     )}

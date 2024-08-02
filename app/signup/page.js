@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import ProductImage from "@/public/images/produc.jpg";
 import Link from "next/link";
-import { signupUser } from "@/lib/authActions";
+import { signupUser } from "@/actions/authActions";
 import { notify } from "@/utils/notify";
 
 export default function Signup() {
@@ -150,7 +150,6 @@ export default function Signup() {
             <Link
               href="/login"
               className="font-medium text-primary hover:underline"
-              prefetch={false}
             >
               Sign in
             </Link>

@@ -1,8 +1,8 @@
-import db from "@/lib/connection";
+import connectToDatabase from "./databaseConnection";
 
 export async function dbHandler(fn, data) {
   try {
-    await db();
+    await connectToDatabase();
     // Return the result of fn
     return await fn(data);
   } catch (error) {
